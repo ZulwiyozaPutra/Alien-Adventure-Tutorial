@@ -16,6 +16,7 @@ enum UDConversationType {
 
 struct UDConversation {
     
+    
     // MARK: Properties
     
     var linesOfDialogue: [UDLineOfDialogue]
