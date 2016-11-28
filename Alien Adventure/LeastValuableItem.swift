@@ -12,12 +12,20 @@ extension Hero {
         
         var leastValuableItem: UDItem? = nil
         
-        let lowestValue = 0
+        var lowestValue: Int? = nil
         
         for item in inventory {
             let itemBaseValue = item.baseValue
-            if itemBaseValue < lowestValue {
+            if lowestValue == nil {
+                lowestValue = itemBaseValue
                 leastValuableItem = item
+            } else {
+                if itemBaseValue < lowestValue! {
+                    lowestValue = itemBaseValue
+                    leastValuableItem = item
+                    
+                    
+                }
             }
         }
         
