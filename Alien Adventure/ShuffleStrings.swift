@@ -10,46 +10,57 @@ extension Hero {
     
     func shuffleStrings(s1: String, s2: String, shuffle: String) -> Bool {
         
+        
+        
         var s1Array: [Character] = []
         var s2Array: [Character] = []
         var shuffleArray: [Character] = []
+        var containedS1Array: [Character] = []
+        var containedS2Array: [Character] = []
         
-        func arrayOfString(string: String) -> ([Character]) {
-            var arrayOfCharacter: [Character] = []
-            for Character in string.characters {
-               arrayOfCharacter.append(Character)
-            }
-            return arrayOfCharacter
+        for c in s1.characters {
+            s1Array.append(c)
         }
         
-        s1Array = arrayOfString(string: s1)
-        s2Array = arrayOfString(string: s2)
+        for c in s2.characters {
+            s2Array.append(c)
+        }
         
-        shuffleArray = arrayOfString(string: shuffle)
-        
-        var s1ArrayShuffled: [Character] = []
-        var s2ArrayShuffled: [Character] = []
-        
-        //validShuffle Function
-        func validShuffle(array: [Character]) -> [Character] {
+        for c in shuffle.characters {
             
-            var shuffledArray: [Character] = []
+            shuffleArray.append(c)
             
-            for arrayShuffledCharacter in shuffleArray {
-                for arrayCharacter in array {
-                    if arrayCharacter == arrayShuffledCharacter {
-                        shuffledArray.append(arrayShuffledCharacter)
-                    }
+            for i in s1Array {
+                
+                if c == i {
+                    containedS1Array.append(i)
                 }
+                
             }
             
-            return shuffledArray
+            for i in s2Array {
+                
+                if c == i {
+                    containedS2Array.append(i)
+                }
+                
+            }
         }
         
-        if s1Array == validShuffle(array: s1Array) && s2Array == validShuffle(array: s2Array) {
+        if s1 == "" && s2 == "" && shuffle == "" {
             return true
-        } else {
+            
+        } else if !(shuffle.characters.count == (s1.characters.count + s2.characters.count)){
             return false
+            
+        } else {
+            
+            if s1Array == containedS1Array && s2Array == containedS2Array {
+                return true
+            } else {
+                return false
+            }
+            
         }
         
     }
