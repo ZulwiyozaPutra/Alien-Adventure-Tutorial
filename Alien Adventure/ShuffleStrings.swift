@@ -47,6 +47,7 @@ extension Hero {
             }
         }
         
+        //Boolean decision making
         if s1 == "" && s2 == "" && shuffle == "" {
             return true
             
