@@ -18,15 +18,25 @@ extension Hero {
         var legendaryAmount: Int = 0
         
         for item in inventory {
-            switch item.rarity {
+            
+            let rarityItem = item.rarity
+            
+            switch rarityItem {
             case .common:
-                commonAmmount += 1
+                commonAmmount = commonAmmount + 1
             case .uncommon:
-                uncommonAmmount += 1
+                uncommonAmmount = uncommonAmmount + 1
             case .rare:
-                rareAmount += 1
+                rareAmount = rareAmount + 1
+            case .legendary:
+                legendaryAmount = legendaryAmount + 1
+            }
+            
+            switch <#value#> {
+            case <#pattern#>:
+                <#code#>
             default:
-                legendaryAmount += 1
+                <#code#>
             }
         }
         
