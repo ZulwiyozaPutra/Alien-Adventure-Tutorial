@@ -10,35 +10,41 @@ extension Hero {
     
     func rarityOfItems(inventory: [UDItem]) -> [UDItemRarity:Int] {
         
-        var itemRarityDict = [UDItemRarity: Int]()
-        
         var commonAmmount: Int = 0
         var uncommonAmmount: Int = 0
         var rareAmount: Int = 0
         var legendaryAmount: Int = 0
         
+        var itemRarityDict = [UDItemRarity: Int]()
+        
         for item in inventory {
+            
+            print("checking \(item.name)")
             
             let rarityItem = item.rarity
             
             switch rarityItem {
             case .common:
                 commonAmmount = commonAmmount + 1
+                print("commonAmount is \(commonAmmount) now")
             case .uncommon:
                 uncommonAmmount = uncommonAmmount + 1
+                print("uncommonAmount is \(uncommonAmmount) now")
             case .rare:
                 rareAmount = rareAmount + 1
+                print("rareAmount is \(rareAmount) now")
             case .legendary:
                 legendaryAmount = legendaryAmount + 1
-            }
-            
-            switch <#value#> {
-            case <#pattern#>:
-                <#code#>
-            default:
-                <#code#>
+                print("legendaryAmount is \(legendaryAmount) now")
             }
         }
+        
+        print("next is common to legendary")
+        print(commonAmmount)
+        print(uncommonAmmount)
+        print(rareAmount)
+        print(legendaryAmount)
+        
         
         itemRarityDict[.common] = commonAmmount
         itemRarityDict[.uncommon] = uncommonAmmount
