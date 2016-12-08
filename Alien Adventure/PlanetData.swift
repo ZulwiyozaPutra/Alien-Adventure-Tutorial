@@ -10,7 +10,40 @@ import Foundation
 extension Hero {
     
     func planetData(dataFile: String) -> String {
-        return ""
+        
+        let planet = Bundle.main.url(forResource: dataFile, withExtension: "json")
+        let rawPlanet = try! Data(contentsOf: planet!)
+        var planetArrayOfDictionaries: [[String: Any]]!
+        
+        do {
+            planetArrayOfDictionaries = try! JSONSerialization.jsonObject(with: rawPlanet, options: JSONSerialization.ReadingOptions()) as! [[String: Any]]
+        }
+        
+        var highestValuedPlanetName: String = ""
+        
+        var highestValuedPlanetValue: Int = 0
+        
+        for item in planetArrayOfDictionaries {
+            
+            let planetName = item["Name"] as! String
+            
+            let commonItems = item["CommonItemsDetected"] as! Int
+            let uncommonItems = item["UncommonItemsDetected"] as! Int
+            let rareItems = item["RareItemsDetected"] as! Int
+            let legendaryItems = item["LegendaryItemsDetected"] as! Int
+            
+            let newHighestValuedPlanetValue = commonItems * 1 + uncommonItems * 2 + rareItems * 3 + legendaryItems * 4
+            
+            if newHighestValuedPlanetValue >= highestValuedPlanetValue {
+                highestValuedPlanetName = planetName
+                highestValuedPlanetValue = newHighestValuedPlanetValue
+            }
+            
+        }
+        
+        
+        
+        return highestValuedPlanetName
     }
 }
 
