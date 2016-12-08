@@ -391,6 +391,7 @@
 				TargetAttributes = {
 					A9C2B49D1B8E2ED2007983DB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 44VVQHZS45;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -605,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44VVQHZS45;
 				INFOPLIST_FILE = "Alien Adventure/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.udacity.Alien-Adventure";
@@ -617,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44VVQHZS45;
 				INFOPLIST_FILE = "Alien Adventure/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.udacity.Alien-Adventure";
