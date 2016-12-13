@@ -9,6 +9,5 @@
 import SpriteKit
 
 class SpecialBadge: Badge {
-    
 
 }
