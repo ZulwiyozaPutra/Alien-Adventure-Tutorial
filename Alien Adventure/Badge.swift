@@ -1,4 +1,4 @@
-//
+        //
 //  Badge.swift
 //  Alien Adventure
 //
@@ -9,6 +9,7 @@
 import SpriteKit
 
 class Badge: SKSpriteNode {
+    
 
     var requestType: UDRequestType
     
