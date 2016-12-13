@@ -9,7 +9,6 @@
 import SpriteKit
 
 class Badge: SKSpriteNode {
-    
 
     var requestType: UDRequestType
     
