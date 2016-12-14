@@ -10,8 +10,6 @@ extension UDGameSM {
     
     func addBadge(hero: Hero, alien: Alien) {
         
-        
-        
         switch(alien.colorVariant) {
         case .Magenta:
             hero.addBadge(Badge(requestType: alien.currentRequestType))
