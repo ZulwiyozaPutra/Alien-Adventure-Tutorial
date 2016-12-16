@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let attributesDictionary: [String:AnyObject] = [
             NSFontAttributeName: UIFont(name: Settings.Common.Font, size: 18)!
         ]
