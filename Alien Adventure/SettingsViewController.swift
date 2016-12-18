@@ -54,6 +54,7 @@ class SettingsViewController: UIViewController {
     
     func showBadges(switchControl: UISwitch) {
         print("show badges switch has changed!")
+        
     }
     
     func startGame() {
