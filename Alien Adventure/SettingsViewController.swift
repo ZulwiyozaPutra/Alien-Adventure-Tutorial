@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var showBadgesLabel: UILabel!    
     @IBOutlet weak var showBadgesSwitch: UISwitch!
     
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
