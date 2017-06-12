@@ -12,7 +12,6 @@ class Badge: SKSpriteNode {
 
     var requestType: UDRequestType
     
-    
     init(requestType: UDRequestType) {
         self.requestType = requestType
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 48, height: 48))
