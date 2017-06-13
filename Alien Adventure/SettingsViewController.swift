@@ -54,31 +54,24 @@ class SettingsViewController: UIViewController {
     
     func switchLevel(segmentControl: UISegmentedControl) {
         print("level control has changed!")
-        var level = Int()
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            level = 1
-        case 1:
-            level = 2
-        case 2:
-            level = 3
-        default:
-            level = 4
-        }
+        Settings.Common.Level = segmentControl.selectedSegmentIndex
         
-        print("level \(level) is tapped")
     }
     
     func showBadges(switchControl: UISwitch) {
         print("show badges switch has changed!")
         if switchControl.isOn {
             print("show badges is on")
+            Settings.Common.ShowBadges = true
         } else {
             print("show badges is off")
+            Settings.Common.ShowBadges = false
         }
     }
     
     func startGame() {
         print("start button has been pressed!")
+        let alienAdventureViewController = self.storyboard!.instantiateViewController(withIdentifier: "AlienAdventureViewController") as! AlienAdventureViewController
+        self.present(alienAdventureViewController, animated: true, completion: nil)
     }
 }
