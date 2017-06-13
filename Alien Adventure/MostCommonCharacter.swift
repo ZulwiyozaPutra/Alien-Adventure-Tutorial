@@ -35,7 +35,7 @@ extension Hero {
             }
         }
         
-        print("mostCommonCharacter is \(mostCommonCharacter)")
+        print("mostCommonCharacter is \(mostCommonCharacter!)")
         
         return mostCommonCharacter
     }
