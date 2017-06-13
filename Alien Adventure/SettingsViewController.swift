@@ -45,16 +45,37 @@ class SettingsViewController: UIViewController {
     
     func addTargets() {
         print("adding targets!")
+        levelSegmentedControl.addTarget(self, action: #selector(switchLevel), for: .valueChanged)
+        showBadgesSwitch.addTarget(self, action: #selector(showBadges), for: .valueChanged)
+        startGameButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
     }
     
     // MARK: Implementing Actions
     
     func switchLevel(segmentControl: UISegmentedControl) {
         print("level control has changed!")
+        var level = Int()
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            level = 1
+        case 1:
+            level = 2
+        case 2:
+            level = 3
+        default:
+            level = 4
+        }
+        
+        print("level \(level) is tapped")
     }
     
     func showBadges(switchControl: UISwitch) {
         print("show badges switch has changed!")
+        if switchControl.isOn {
+            print("show badges is on")
+        } else {
+            print("show badges is off")
+        }
     }
     
     func startGame() {
