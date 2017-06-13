@@ -12,10 +12,14 @@ class Badge: SKSpriteNode {
 
     var requestType: UDRequestType
     
+    var badgeTexture: SKTexture
+    
     init(requestType: UDRequestType) {
         self.requestType = requestType
-        let badgeMagentaTexture = SKSpriteNode(imageNamed: "BadgeMagenta").texture
-        super.init(texture: badgeMagentaTexture, color: UIColor.clear, size: CGSize(width: 48, height: 48))
+        
+        self.badgeTexture = SKTexture(imageNamed: "BadgeMagenta")
+        
+        super.init(texture: badgeTexture, color: UIColor.clear, size: CGSize(width: 48, height: 48))
         
     }
 
