@@ -18,12 +18,24 @@ extension Hero {
     
     func redefinePolicingItems() -> ((UDItem) throws -> Void) {
         
-        func policingFilter(item: UDItem) throws -> Void {
-            
+        return policingFilter        
+    }
+    
+    func policingFilter(item: UDItem) throws -> Void {
+        
+        if item.name.lowercased().contains("laser") {
+            throw UDPolicingError.nameContainsLaser
         }
         
-        return policingFilter        
-    }    
+        if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String, planetOfOrigin == "Cunia" {
+            throw UDPolicingError.itemFromCunia
+        }
+        
+        if item.baseValue < 10 {
+            throw UDPolicingError.valueLessThan10
+        }
+        
+    }
 }
 
 // If you have completed this function and it is working correctly, feel free to skip this part of the adventure by opening the "Under the Hood" folder, and making the following change in Settings.swift: "static var RequestsToSkip = 3"
